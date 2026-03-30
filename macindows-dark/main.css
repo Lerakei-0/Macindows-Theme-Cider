@@ -1,0 +1,733 @@
+/* ----------- Macindows CIDER THEME ------------ */
+/* Warm parchment palette with bold black borders */
+/* ---------------Version 0.1.0------------------ */
+/* ---------------Author: Lerakei-0-------------- */
+
+/* ── COLOUR TOKENS ────────────────────────────── */
+:root {
+  /* Base Colors - Warm Parchment */
+  --hz-bg-deep:        #111111;
+  --hz-bg-base:        #191919;
+  --hz-bg-surface:     #111111;
+  --hz-text-primary:   #ffffff;
+  --hz-text-secondary: #919191;
+  --hz-text-muted:     #aaa6a1;
+  
+  /* Accent Colors */
+  --hz-teal:           #6ab8b0;
+  --hz-teal-light:     #88d3cb91;
+  --hz-teal-pale:      #91e9e986;
+  --hz-pink:           #e8909a;
+  --hz-sage:           #88b088;
+  
+  /* Borders */
+   --hz-border:         rgba(255, 255, 255, 0.25);
+  --hz-border-strong:  rgba(255, 255, 255, 0.5);
+  --hz-black:            #ffffff;
+  
+  /* Hover & Active States */
+  --hz-bg-hover:       rgba(26, 20, 16, 0.06);
+  --hz-bg-active:      rgba(26, 20, 16, 0.12);
+}
+
+body {
+  font-family: 'Georgia', 'Palatino Linotype', serif;
+  font-size: 14px;
+}
+
+/* ── DARK MODE VARIABLES ──────────────────────── */
+body.body--dark {
+  --sidebar-bg: var(--hz-bg-deep);
+  --secondary-sidebar-bg: var(--hz-bg-deep);
+  --primary-bg: var(--hz-bg-deep);
+  --popover-bg: #ffffff;
+  --card-bg: var(--hz-bg-deep);
+  --fg: var(--hz-text-primary);
+  --text: var(--hz-text-primary);
+  --text-dim: var(--hz-text-muted);
+  --text-dim-hc: var(--hz-text-secondary);
+  --border: var(--hz-border);
+  --border-hc: var(--hz-border-strong);
+  --icon: var(--hz-teal);
+  --button-hover: var(--hz-bg-hover);
+  --button-active: var(--hz-bg-active);
+  --twenny-five: rgba(26, 20, 16, 0.25);
+  --media-controls-shadow: 2px 2px 0px var(--hz-black), 0 4px 12px rgba(26, 20, 16, 0.15);
+  color: var(--fg);
+}
+
+
+body {
+  --systemPrimary: var(--text);
+  --systemSecondary: var(--text-dim);
+  --systemTertiary: var(--button-hover);
+  --systemGray: var(--text-dim);
+  --textDefault: var(--text);
+}
+
+/* ─────────────────────────────────────────────── */
+/*           BUTTONS & CONTROLS                   */
+/* ─────────────────────────────────────────────── */
+.primary-actions {
+  height: 44px;
+  border-radius: 6px;
+  border: 2px solid var(--hz-black);
+  background-color: var(--hz-teal);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px var(--hz-black);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.primary-actions:hover {
+  background-color: var(--hz-teal-light);
+  box-shadow: 2px 2px 0px var(--hz-black);
+  transform: translateY(-1px);
+}
+
+.primary-actions:active {
+  box-shadow: 1px 1px 0px var(--hz-black);
+  transform: translateY(1px);
+}
+
+.detail-actions {
+  border: 0px 20px;
+}
+
+/* ─────────────────────────────────────────────── */
+/*                   SIDEBARS                     */
+/* ─────────────────────────────────────────────── */
+[sfc-name="Sidebar"] {
+  background-color: var(--hz-bg-deep);
+  border-right: 1px solid var(--hz-black);
+  overflow: visible;
+}
+
+[sfc-name="Sidebar"] .nucleo-icon,
+[sfc-name="Sidebar"] .q-icon,
+[sfc-name="Sidebar"] .nav-icon {
+  color: var(--hz-black);
+}
+
+[sfc-name="Sidebar"] [sfc-name="NavigationButton"]:hover {
+  color: var(--text);
+  background-color: var(--hz-teal-pale);
+  border: 2px solid var(--hz-teal-light);
+  border-radius: 6px;
+  margin: 0;
+}
+
+[sfc-name="Sidebar"] [sfc-name="NavigationButton"].active {
+  color: var(--text);
+  background-color: var(--hz-teal-pale);
+  border: 2px solid var(--hz-teal);
+  border-radius: 6px;
+  margin: 0;
+}
+
+.sidebar_nav-btn:active{
+  color: var(--text);
+  background-color: var(--hz-teal-pale)!important;
+  border: 2px solid var(--hz-teal);
+  border-radius: 6px;
+  margin: 0;
+}
+
+[sfc-name="NavigationButton"] {
+  height: 22px;
+  border-radius: 6px;
+  margin: 0;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+[sfc-name="Sidebar"] .am-expansion-item {
+
+}
+
+[sfc-name="Sidebar"] .am-expansion-item::before {
+
+}
+
+[sfc-name="Sidebar"] .sidebar-label,
+[sfc-name="Sidebar"] .expand-button {
+
+}
+
+.am-expansion-item:first-of-type {
+
+}
+
+.left-drawer-resize-handle,
+.right-drawer-resize-handle {
+  display: block;
+}
+
+.ns-sidebar {
+  background-color: var(--hz-bg-deep);
+  border-right: 1px solid var(--hz-black);
+}
+
+body.body--light .new-shell-page-container {
+  border-left: none;
+  border-right: none;
+}
+
+body.body--dark .new-shell-page-container {
+  border-left: none;
+  border-right: none;
+}
+
+.left-drawer-overlay {
+  width: 240px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--hz-black);
+}
+
+.search-box.cSearch {
+  border: 2px solid var(--hz-black);
+  background: #000;
+  color: var(--text);
+  opacity: 1;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px var(--hz-black);
+  transition: all 0.15s ease;
+}
+
+.search-box.cSearch:focus {
+  border-color: var(--hz-teal);
+  background: #000;
+  box-shadow: 2px 2px 0px var(--hz-teal);
+}
+
+[sfc-name=AMQueueItem] {
+  height: 55px;
+  border-radius: 6px;
+  margin: 3px 8px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+[sfc-name=AMQueueItem]:hover {
+  background-color: var(--hz-teal-pale);
+  border-color: var(--hz-teal-light);
+}
+
+[sfc-name=RightDrawerContent] [sfc-name=QCardSection] .icon {
+  color: var(--icon);
+}
+
+/* ─────────────────────────────────────────────── */
+/*              PRIMARY PANE                      */
+/* ─────────────────────────────────────────────── */
+.new-shell-page-container {
+  background-color: var(--hz-bg-base);
+  border-top: 2px solid var(--hz-black);
+}
+
+.lockupControls .play:hover ._svg-icon,
+.lockupControls .menu:hover ._svg-icon,
+.powerswoosh-lockup-controls-container ._svg-icon {
+  background: var(--hz-teal);
+}
+
+[sfc-name=Playlist] .cloud-buttons .add-to-library-btn,
+[sfc-name=Playlist] .cloud-buttons .nucleo-icon,
+[sfc-name=Playlist] .cloud-buttons .q-icon,
+[sfc-name=Playlist] .cloud-buttons .nav-icon,
+[sfc-name=Playlist] .cloud-buttons .feather,
+[sfc-name=Playlist] [sfc-name=ListItem] .add-to-library-btn,
+[sfc-name=Playlist] [sfc-name=ListItem] .nucleo-icon,
+[sfc-name=Playlist] [sfc-name=ListItem] .q-icon,
+[sfc-name=Playlist] [sfc-name=ListItem] .nav-icon,
+[sfc-name=Playlist] [sfc-name=ListItem] .feather,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] .add-to-library-btn,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] .nucleo-icon,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] .q-icon,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] .nav-icon,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] .feather {
+  color: var(--icon);
+}
+
+[sfc-name=Playlist] .cloud-buttons ._svg-icon,
+[sfc-name=Playlist] [sfc-name=ListItem] ._svg-icon,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] ._svg-icon {
+  background: var(--icon);
+}
+
+[sfc-name=Playlist] [sfc-name=ListItem]:hover,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort]:hover {
+  background-color: var(--hz-teal-pale);
+  border-radius: 6px;
+  border: 2px solid var(--hz-teal-light);
+}
+
+[sfc-name=Playlist] [sfc-name=ListItem].selected,
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort].selected {
+  background-color: var(--hz-teal-pale);
+  border: 2px solid var(--hz-teal);
+}
+
+[sfc-name=LibraryArtists] .q-drawer {
+  background: var(--secondary-sidebar-bg);
+  border-right: 1px solid var(--hz-black);
+}
+
+[sfc-name=LibraryArtists] .q-drawer .q-item {
+  border-radius: 6px;
+  margin: 3px 8px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+[sfc-name=LibraryArtists] .q-drawer .q-item:hover {
+  background-color: var(--hz-teal-pale);
+  border-color: var(--hz-teal-light);
+}
+
+[sfc-name=LibraryArtists] .q-drawer .q-item .q-focus-helper {
+  color: transparent;
+  opacity: 0;
+}
+
+[sfc-name=LibraryArtists] .q-drawer .q-item .q-focus-helper::before,
+[sfc-name=LibraryArtists] .q-drawer .q-item .q-focus-helper::after {
+  display: none;
+}
+
+[sfc-name=LibraryArtists] .q-drawer .bg-primary {
+  background: linear-gradient(135deg, var(--hz-teal) 0%, var(--hz-teal-light) 100%);
+  color: #ffffff;
+  border: 2px solid var(--hz-teal);
+}
+
+/* ─────────────────────────────────────────────── */
+/*            MEDIA CONTROLS                      */
+/* ─────────────────────────────────────────────── */
+
+
+.new-shell [sfc-name=MojavePlayer] {
+  box-shadow: var(--media-controls-shadow);
+  background-color: var(--card-bg);
+  border-top: 2px solid var(--hz-black);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlayAction"],
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPauseAction"] {
+  margin: 0 6px 0 6px;
+  border: 2px solid var(--hz-black);
+  background: #000;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px var(--hz-black);
+  transition: all 0.15s ease;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlayAction"]:hover,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPauseAction"]:hover {
+  box-shadow: 2px 2px 0px var(--hz-black);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlayAction"]:active,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPauseAction"]:active {
+  box-shadow: 1px 1px 0px var(--hz-black);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlayAction"] .play-icon,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPauseAction"] .play-icon {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlayAction"] .play-icon ._svg-icon,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPauseAction"] .play-icon ._svg-icon {
+  background: #ffffff;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] {
+  margin-top: 0px;
+  align-items: center;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] ._svg-icon {
+  --size: 26px;
+  background: var(--icon);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMShuffleAction],
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMPrevAction],
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMNextAction],
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMRepeatAction] {
+  opacity: 1;
+  transition: all 0.15s ease;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMShuffleAction]:hover,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMPrevAction]:hover,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMNextAction]:hover,
+.new-shell [sfc-name=MojavePlayer] [sfc-name="AMPlaybackActions"] [sfc-name=AMRepeatAction]:hover {
+  color: var(--hz-teal);
+  filter: drop-shadow(1px 1px 0px rgba(26, 20, 16, 0.2));
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMProgressWidget] .am-currenttime,
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMProgressWidget] .am-duration {
+  opacity: 1;
+  color: var(--text-dim);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMProgressBar] .overlay-progress-track,
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMVolumeSlider] .overlay-progress-track {
+  background-color: var(--hz-border);
+  border-radius: 2px;
+  border: 1px solid var(--hz-black);
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMProgressBar] .overlay-progress-bar,
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMVolumeSlider] .overlay-progress-bar {
+  background: linear-gradient(90deg, var(--hz-teal) 0%, var(--hz-teal-light) 100%);
+  border-radius: 2px;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMProgressBar] .icon,
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMVolumeSlider] .icon {
+  opacity: 1;
+}
+
+.new-shell [sfc-name=MojavePlayer] .volume-container.active .feather {
+  color: var(--hz-teal);
+  opacity: 1;
+}
+
+.new-shell [sfc-name=MojavePlayer] .add-to-library-btn,
+.new-shell [sfc-name=MojavePlayer] .nucleo-icon,
+.new-shell [sfc-name=MojavePlayer] .q-icon:not(.action-active .q-icon),
+.new-shell [sfc-name=MojavePlayer] .nav-icon,
+.new-shell [sfc-name=MojavePlayer] .feather {
+  color: var(--icon);
+  opacity: 1;
+  transition: all 0.15s ease;
+}
+
+.new-shell [sfc-name=MojavePlayer] .add-to-library-btn:hover,
+.new-shell [sfc-name=MojavePlayer] .nucleo-icon:hover,
+.new-shell [sfc-name=MojavePlayer] .q-icon:hover:not(.action-active .q-icon),
+.new-shell [sfc-name=MojavePlayer] .nav-icon:hover,
+.new-shell [sfc-name=MojavePlayer] .feather:hover {
+  filter: drop-shadow(1px 1px 0px rgba(26, 20, 16, 0.2));
+}
+
+.new-shell [sfc-name=MojavePlayer] ._svg-icon {
+  background: var(--icon);
+  opacity: 1;
+}
+
+.new-shell [sfc-name=MojavePlayer] .chrome-button-content {
+  opacity: 1;
+}
+
+.new-shell [sfc-name=MojavePlayer] [sfc-name=AMPMetadataMojave] .release-info {
+  opacity: 1;
+  color: var(--text-dim);
+}
+
+/* ─────────────────────────────────────────────── */
+/*            RICH ALBUM GRID                     */
+/* ─────────────────────────────────────────────── */
+.shelf-item-expanded {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+[sfc-name="RichAlbumGridDetails"] {
+  --keyColor: var(--hz-teal);
+  border-radius: 6px;
+  border: 2px solid var(--hz-black);
+  background-color: var(--card-bg);
+  box-shadow: 2px 2px 0px rgba(26, 20, 16, 0.15);
+  transition: all 0.15s ease;
+}
+
+[sfc-name="RichAlbumGridDetails"]:hover {
+  border-color: var(--hz-teal);
+  background-color: #FFF5E6;
+  box-shadow: 2px 2px 0px rgba(26, 20, 16, 0.2);
+}
+
+[sfc-name="RichAlbumGridDetails"] .more-btn .material-icons {
+  font-weight: 900;
+  color: var(--icon);
+}
+
+[sfc-name="RichAlbumGridDetails"] .artwork-container {
+  -webkit-mask-image: unset;
+}
+
+[sfc-name="RichAlbumGridDetails"] [sfc-name="MediaItemArtwork"] {
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+[sfc-name="RichAlbumGridDetails"]:hover [sfc-name="MediaItemArtwork"] {
+  border-color: var(--hz-teal);
+}
+
+[sfc-name="RichAlbumGridDetails"] .ri-list-item:focus {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--hz-teal) 0%, var(--hz-teal-light) 100%);
+  border-radius: 6px;
+}
+
+[sfc-name="RichAlbumGridDetails"] .ri-list-item:focus .playing-indicator {
+  --eq-bars-bg-color: #ffffff;
+}
+
+[sfc-name="RichAlbumGridDetails"] .ri-list-item:focus .q-icon {
+  color: #ffffff;
+}
+
+[sfc-name=RichAlbumGridItem] .item-name {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+  font-family: Georgia, serif;
+}
+
+[sfc-name=RichAlbumGridItem]:hover .item-name {
+  color: var(--hz-teal);
+}
+
+[sfc-name=RichAlbumGridItem] .artistLink .title-text,
+[sfc-name=RichAlbumGridItem] .artistLink .release-year-badge {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 400;
+  font-family: Georgia, serif;
+}
+
+/* ─────────────────────────────────────────────── */
+/*               TITLE BAR                        */
+/* ─────────────────────────────────────────────── */
+[sfc-name=QToolbar].chrome-top:not(.no-controls) {
+  padding: 0 120px 0 12px;
+  background-color: var(--hz-bg-deep);
+  border-bottom: 2px solid var(--hz-black);
+}
+
+[sfc-name=QToolbar] .add-to-library-btn,
+[sfc-name=QToolbar] .nucleo-icon,
+[sfc-name=QToolbar] .q-icon,
+[sfc-name=QToolbar] .nav-icon,
+[sfc-name=QToolbar] .feather,
+[sfc-name=QToolbar] .vue-feather {
+  color: var(--hz-black);
+  transition: all 0.15s ease;
+}
+
+[sfc-name=QToolbar] .add-to-library-btn:hover,
+[sfc-name=QToolbar] .nucleo-icon:hover,
+[sfc-name=QToolbar] .q-icon:hover,
+[sfc-name=QToolbar] .nav-icon:hover,
+[sfc-name=QToolbar] .feather:hover,
+[sfc-name=QToolbar] .vue-feather:hover {
+  color: var(--hz-teal);
+}
+
+[sfc-name=QToolbar] ._svg-icon {
+  background: var(--icon);
+  transition: background 0.15s ease;
+}
+
+[sfc-name=QToolbar] ._svg-icon:hover {
+  background: var(--hz-teal-light);
+}
+
+[sfc-name=QToolbar] .chrome-button {
+  color: var(--icon);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+[sfc-name=QToolbar] .chrome-button:hover {
+  color: var(--hz-teal-light);
+  background-color: var(--hz-teal-pale);
+  border-color: var(--hz-teal-light);
+}
+
+[sfc-name=QToolbar] .chrome-button:hover::before {
+  opacity: 0;
+}
+
+[sfc-name=QToolbar] .chrome-button-content {
+  opacity: 1;
+}
+
+/* ── WINDOW CONTROLS ─────────────────────────────────────── */
+
+/* ── WINDOW CONTROLS CONTAINER ───────────────────────────── */
+.window-controls {
+  gap: 0 !important;
+  padding: 0 16px 0 8px !important;
+  width: auto !important;
+  min-width: unset !important;
+}
+
+div[data-v-663b9be4].window-control.isWin32 {
+  color: transparent !important;
+  --mask-image: none !important;
+  --winglyphDisplay: none !important;
+  position: relative !important;
+  overflow: visible !important;
+  background: transparent !important;
+  width: 20px !important;
+  height: 50px !important;
+  margin: 0px 2px !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+div[data-v-663b9be4].window-control.isWin32::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 14px !important;
+  height: 14px !important;
+  z-index: 999 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #ffffff !important;
+  box-shadow: 1px 1px 0px #ffffff !important;
+}
+
+/* Normal state */
+div[data-v-663b9be4].window-control.minimize.isWin32::after { background: #9FFFA2 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32::after   { background: #FFF19F !important; }
+div[data-v-663b9be4].window-control.close.isWin32::after    { background: #FF9F9F !important; }
+
+/* Hover state */
+div[data-v-663b9be4].window-control.minimize.isWin32:hover::after { background: #6fdf72 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32:hover::after   { background: #cfc16f !important; }
+div[data-v-663b9be4].window-control.close.isWin32:hover::after    { background: #d06f6f !important; }
+
+/* Pressed state */
+div[data-v-663b9be4].window-control.minimize.isWin32:active::after { background: #4fbf52 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32:active::after   { background: #afa14f !important; }
+div[data-v-663b9be4].window-control.close.isWin32:active::after    { background: #b04f4f !important; }
+div[data-v-663b9be4].window-control.minimize.isWin32::after { background: #9FFFA2 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32::after   { background: #FFF19F !important; }
+div[data-v-663b9be4].window-control.close.isWin32::after    { background: #FF9F9F !important; }
+
+/* Hover state */
+div[data-v-663b9be4].window-control.minimize.isWin32:hover::after { background: #6fdf72 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32:hover::after   { background: #cfc16f !important; }
+div[data-v-663b9be4].window-control.close.isWin32:hover::after    { background: #d06f6f !important; }
+
+/* Pressed state */
+div[data-v-663b9be4].window-control.minimize.isWin32:active::after { background: #4fbf52 !important; }
+div[data-v-663b9be4].window-control.minmax.isWin32:active::after   { background: #afa14f !important; }
+div[data-v-663b9be4].window-control.close.isWin32:active::after    { background: #b04f4f !important; }
+
+
+/* ─────────────────────────────────────────────── */
+/*            POPOVER MENU                        */
+/* ─────────────────────────────────────────────── */
+.q-menu {
+  background-color: #ffffff;
+  border: 2px solid var(--hz-black);
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px var(--hz-black);
+}
+
+.q-menu [sfc-name=ContextMenuIcon] .q-icon,
+.q-menu [sfc-name=ContextMenuIcon] .nucleo-icon,
+.q-menu [sfc-name=ContextMenuIcon] .nav-icon,
+.q-menu [sfc-name=ContextMenuIcon] .feather {
+  color: var(--icon);
+}
+
+.q-menu [sfc-name=QItem]:hover,
+.q-menu [sfc-name=CascadeItem]:hover {
+  color: var(--text);
+  background-color: var(--hz-teal-pale);
+  border: 2px solid var(--hz-teal-light);
+  border-radius: 6px;
+  margin: 2px 4px;
+}
+
+.q-menu [sfc-name=QItem],
+.q-menu [sfc-name=CascadeItem] {
+  color: var(--text);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  margin: 2px 4px;
+  transition: all 0.15s ease;
+}
+
+.q-menu [sfc-name=QItem] .q-icon,
+.q-menu [sfc-name=CascadeItem] .q-icon {
+  color: var(--icon);
+}
+
+/* ─────────────────────────────────────────────── */
+/*            SCROLLBARS                          */
+/* ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 20, 16, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgba(26, 20, 16, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 20, 16, 0.5);
+}
+
+/* ─────────────────────────────────────────────── */
+/*            GENERAL TRANSITIONS                 */
+/* ─────────────────────────────────────────────── */
+* {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/*# sourceMappingURL=cider-theme-harzu.css.map */
+
+/*Profile Tab*/
+
+.profile-tab{
+  border-top: 2px solid var(--hz-black);
+  padding: 6px;
+}
+.profile-tab .profile-btn:hover{
+ background-color: var(--hz-teal-pale);
+  outline: 2px solid var(--hz-teal);
+}
+
+.profile-tab .profile-btn.active{
+  background-color: var(--hz-teal-pale);
+  color: var(--hz-black);
+}
+
